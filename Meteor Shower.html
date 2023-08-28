@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <!--
+
+    https://youtube.com/@Programith
+
+    //-->
+
+    <head>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background: linear-gradient(15deg, #e66465, #9198e5);
+                transform: rotate(15deg);
+                height: 100vh;
+                overflow: hidden;
+            }
+
+            i {
+                position: absolute;
+                height: 160px;
+                background: linear-gradient(transparent, #fff);
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+                animation: raining 5s linear Infinite;
+            }
+
+            @keyframes raining {
+                0% {
+                    transform: translateY(-160px);
+                }
+                100% {
+                    transform: translateY(calc(100vh + 160px));
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <script type="text/javascript">
+            function meteor() {
+                let amount = 150;
+                let body = document.querySelector("body");
+                let count = 0;
+
+                while (count < amount) {
+                    let drop = document.createElement("i");
+
+                    let size = Math.random() * 5;
+                    let posX = Math.floor(Math.random() * window.innerWidth);
+                    let delay = Math.random() * -20;
+                    let duration = Math.random() * 5;
+
+                    drop.style.width = `${0.1 + size}px`;
+                    drop.style.left = `${posX}px`;
+                    drop.style.animationDelay = `${delay}s`;
+                    drop.style.animationDuration = `${1 + duration}s`;
+
+                    body.appendChild(drop);
+                    count++;
+                }
+            }
+
+            meteor();
+        </script>
+    </body>
+</html>
