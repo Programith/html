@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <!--
+
+    @Programith
+
+    //-->
+
+    <head>
+        <style>
+            body {
+                background: black;
+            }
+
+            .loader {
+                position: absolute;
+                top: 50%; left: 50%;
+                --from: 40px;
+                --to: 130px;
+                --size: 15px;
+                --time: 7s;
+                --count: 51;
+                --turns: 6;
+            }
+
+            .circle {
+                position: absolute;
+                --delay: calc(var(--time) / var(--count) * -2 * var(--i));
+                rotate: calc(var(--turns) * 1turn / var(--count) * var(--i));
+                animation: circle var(--time) var(--delay) ease-in-out infinite;
+            }
+            .circle:nth-child(n + var(--count)) {
+                display: none;
+            }
+            .circle::before {
+                content: '';
+                display: block;
+                width: var(--size); aspect-ratio: 1/1;
+                border-radius: 50%;
+                background-color: white;
+                transform-origin: center center;
+                animation: circleSize var(--time) var(--delay) ease-in-out infinite;
+            }
+
+            .rainbow .circle::before {
+                background-color: hsl(
+                    calc(1turn /  ( var(--count) / var(--turns) ) * var(--i)) 
+                    100% 70%
+                );
+            }
+
+            @keyframes circle {
+                from { transform: translate(0, var(--from)); }
+                to { transform: translate(0, var(--to)); }
+            }
+
+            @keyframes circleSize {
+                0%, 100% { transform: scale(0); }
+                25%, 50% { transform: scale(1); }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="loader rainbow"></div>
+
+        <script type="text/javascript">
+            var loader = document.getElementsByClassName("loader")[0];
+
+            for (var i = 0; i < 100; i++) {
+                var b = document.createElement("div");
+                b.className = "circle";
+                b.style.setProperty("--i", i+1);
+                loader.appendChild(b);
+            }
+        </script>
+    </body>
+</html>
