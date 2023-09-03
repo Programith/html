@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+    <!--
+
+    @Programith
+
+    //-->
+
+    <head>
+        <style>
+            body {
+                background: black;
+                overflow: hidden;
+            }
+            .owl {
+                position: relative;
+                margin: auto;
+                display: block;
+                margin-top: 10%;
+                width: 200px;
+                background: none;
+            }
+            .pupil {
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                width: 50px;
+                height: 50px;
+                border-radius: 25px;
+                background: #000;
+            }
+            .pupil::after {
+                position: absolute;
+                top: 0;
+                right: 0;
+                display: block;
+                width: 24px;
+                height: 24px;
+                border-radius: 12px;
+                background: #fff;
+                content: "";
+            }
+
+            .eye {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                width: 90px;
+                height: 90px;
+                border-radius: 45px;
+                background: #fff;
+            }
+            .eye:nth-child(2) {
+                left: 98px;
+            }
+            .eyes {
+                position: absolute;
+                top: 10px;
+                left: -20px;
+                width: 110px;
+                height: 110px;
+                border-radius: 55px;
+                background: #F0B4F4;
+            }
+            .eyes::before {
+                position: absolute;
+                left: 88px;
+                display: block;
+                width: 110px;
+                height: 110px;
+                border-radius: 55px;
+                background: #F0B4F4;
+                content: "";
+            }
+            .beak {
+                position: absolute;
+                top: 60px;
+                left: 49px;
+                display: block;
+                width: 0;
+                height: 0;
+                border-top: 60px solid #FDCF09;
+                border-right: 50px solid transparent;
+                border-left: 50px solid transparent;
+                content: "";
+            }
+            .head {
+                position: absolute;
+                width: 160px;
+                height: 80px;
+                border-radius: 80px / 40px;
+                background: #CB7FB4;
+            }
+
+            .body {
+                position: absolute;
+                top: 100px;
+                width: 160px;
+                height: 100px;
+                border-radius: 80px / 50px;
+                background: #FBD6EE;
+            }
+            .wing {
+                position: absolute;
+                top: 0;
+                left: -20px;
+                width: 50px;
+                height: 100px;
+                border-radius: 50px 0;
+                background: #CC7FB5;
+                transform-origin: 30px 10px;
+                transform: rotate(-20deg);
+            }
+
+            .wing:nth-child(2) {
+                left: 130px;
+                border-radius: 0 50px;
+                transform-origin: 20px 10px;
+                transform: rotate(20deg);
+            }
+            .feet {
+                position: absolute;
+                bottom: -5px;
+                left: 50px;
+                width: 6px;
+                height: 18px;
+                border-radius: 3px / 9px;
+                background: #ef8e1b;
+                transform: rotate(10deg);
+            }
+            .feet::before {
+                position: absolute;
+                bottom: 0;
+                left: -6px;
+                display: block;
+                width: 6px;
+                height: 18px;
+                border-radius: 3px / 9px;
+                background: #ef8e1b;
+                content: "";
+            }
+
+            .feet::after {
+                position: absolute;
+                bottom: 0;
+                left: 6px;
+                display: block;
+                width: 6px;
+                height: 18px;
+                border-radius: 3px / 9px;
+                background: #ef8e1b;
+                content: "";
+            }
+            .feet.right {
+                left: 104px;
+                transform: rotate(-10deg);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="owl">
+            <div class="body">
+                <div class="wing"></div>
+                <div class="wing"></div>
+                <div class="feet"></div>
+                <div class="feet right"></div>
+            </div>
+            <div class="head">
+                <div class="eyes">
+                    <div class="beak"></div>
+                    <div class="eye">
+                        <div class="pupil"></div>
+                    </div>
+                    <div class="eye">
+                        <div class="pupil"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
