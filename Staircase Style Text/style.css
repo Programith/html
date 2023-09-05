@@ -1,0 +1,73 @@
+/*
+
+@Programith
+
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+}
+
+.texts {
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    font-size: 48px;
+    font-weight: 800;
+    text-transform: uppercase;
+    overflow: hidden;
+}
+
+.texts:nth-child(odd) {
+    transform: skew(60deg, -30deg);
+}
+
+.texts:nth-child(even) {
+    transform: skew(0, -30deg) scaleY(1.5);
+}
+
+.texts:nth-child(1) {
+    left: -50px;
+}
+
+.texts:nth-child(2) {
+    top: 10px;
+    left: -15px;
+}
+
+.texts:nth-child(3) {
+    top: 19px;
+    left: 20px;
+}
+
+.texts:nth-child(4) {
+    top: 29px;
+    left: 55px;
+}
+
+.texts:nth-child(5) {
+    top: 38px;
+    left: 90px;
+}
+
+p {
+    transition: 0.5s ease-in-out;
+    animation: climbing 1s linear infinite;
+}
+
+@keyframes climbing {
+    100% {
+        transform: translate(0, -40px);
+    }
+}
