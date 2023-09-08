@@ -1,0 +1,171 @@
+/*
+
+@Programith
+
+*/
+
+body {
+    --bg: black;
+    --dark: #1b1b1b;
+    --bone: #eee;
+    --blade: #999;
+    background: var(--bg);
+    overflow: hidden;
+}
+
+.cartoon {
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 80vmin;
+    height: 80vmin;
+}
+
+.cartoon div {
+    position: absolute;
+    box-sizing: border-box;
+}
+
+.hb::before,
+.ha::after {
+    content: "";
+    display: block;
+    position: absolute;
+    box-sizing: border-box;
+}
+
+.head {
+    top: 50%;
+    left: 50%;
+    width: 30%;
+    height: 10%;
+    background: var(--bone);
+    border-radius: 90% 90% 80% 80% / 15%;
+    box-shadow:
+            0 -18vmin 0 14vmin var(--bone),
+            0 2.25vmin 0 -2vmin var(--bg),
+            0 2.25vmin 0 0vmin var(--bone);
+    transform: translate(-50%, 0) rotate(4deg);
+    background-image:
+        linear-gradient(var(--bone) 60%, transparent 65%),
+        linear-gradient(to right, var(--bone) 92%, var(--bg) 95%);
+    background-size: 25.5%;
+}
+
+.head::after,
+.head::before {
+    width: 10%;
+    height: 50%;
+    background: var(--bg);
+    top: -40%;
+    left: 50%;
+    transform: translate(-100%, 0) rotate(4deg);
+    border-radius: 100% 50% 50% 50%;
+    box-shadow:
+        -8vmin -10vmin 0 5vmin var(--bg),
+        -8vmin -10vmin 0 6vmin var(--bone), 
+        -8.5vmin -8.25vmin 0.025vmin 4.5vmin var(--bg),  
+        -9vmin -11.5vmin 0vmin 6.25vmin var(--bone),
+        -9.25vmin -12.25vmin 0.025vmin 5.75vmin var(--bg);
+}
+
+.head::after {
+    transform: scaleX(-1) translate(-20%, 0);
+    left: 50%;
+}
+
+.scythe {
+    width: 150%;
+    height: 150%;
+    transform: rotate(-7deg);
+    top: -40%;
+    overflow: hidden;
+}
+
+.scythe::before {
+    width: 200%;
+    height: 150%;
+    left: -90%;
+    top: 10%;
+    border-radius: 50%;
+    box-shadow: inset 20vmin 10vmin var(--blade), inset 23vmin 12vmin rgba(255, 255, 255, 0.58);
+}
+
+.scythe::after {
+    width: 4%;
+    height: 100%;
+    top: 8%;
+    background: var(--dark);
+    border-radius: 5vmin;
+}
+
+.tunic {
+    background: var(--dark);
+    width: 73%;
+    height: 70%;
+    left: 51.5%;
+    top: 7.5%;
+    transform: translate(-50%, 0);
+    border-radius: 80% / 50% 50% 100% 110%;
+}
+
+.tunic::after {
+    width: 100%;
+    height: 100%;
+    background: var(--dark);
+    border-radius: 100% / 150% 150% 40% 40%;
+    top: 70%;
+}
+
+.tunic::before {
+    width: 50%;
+    height: 20%;
+    background: var(--dark);
+    border-radius: 10% 0 120% 20% / 50% 50% 100%;
+    z-index: 1;
+    top: 87%;
+    left: -17%;
+    transform: rotate(-20deg);
+}
+
+.hand::before,
+.hand {
+    width: 2.5%;
+    height: 1%;
+    background: var(--bone);
+    border-radius: 100% / 100% 120% 120% 100%;
+    top: 78%;
+    left: 7%;
+    transform: rotate(-5deg);
+    box-shadow:
+        -2.25vmin 0 0 0.125vmin var(--bone),
+        -0.25vmin -1.25vmin var(--bone),
+        -2.5vmin -1.25vmin 0 0.125vmin var(--bone),
+        -0.125vmin -2.5vmin var(--bone),
+        -2.35vmin -2.5vmin 0 0.125vmin var(--bone)
+}
+
+.hand::before {
+    width: 100%;
+    height: 100%;
+    top: 2000%;
+    left: 2500%;
+    transform: rotate(95deg);
+    box-shadow: 
+        -2.25vmin 0 0 0.125vmin var(--bone),
+        0.25vmin -1.25vmin var(--bone),
+        -2.125vmin -1.25vmin 0 0.125vmin var(--bone),
+        -0.125vmin -2.5vmin var(--bone),
+        -2.35vmin -2.5vmin 0 0.125vmin var(--bone)
+}
+
+.hand::after {
+    width: 100%;
+    height: 140%;
+    background: var(--bone);
+    top: 1700%;
+    left: 2420%;
+    transform: rotate(-45deg);
+    border-radius: 50%;
+}
