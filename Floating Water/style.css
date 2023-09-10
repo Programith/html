@@ -1,0 +1,22 @@
+/*
+
+@Programith
+
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: black;
+}
+
+canvas {
+    position: relative;
+    left: 50%;
+    margin-left: -50vmin;
+    width: 100vmin;
+    height: 80vmin;
+    overflow: hidden;
+    display: block;
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--
+
+    @Programith
+
+    //-->
+
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <canvas></canvas>
+
+        <script type="text/javascript">
+            var time;
+
+            const HEI = 0.9;
+            const MAX = 100;
+            const canvas = document.getElementsByTagName("canvas")[0];
+            const ctx = canvas.getContext("2d");
+            canvas.width = canvas.height = 400;
+
+            animate();
+
+            function animate() {
+                ctx.globalCompositeOperation = "source-over";
+                ctx.fillStyle = "black";
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.globalCompositeOperation = "lighter";
+                ctx.strokeStyle = ctx.fillStyle = "hsla(244, 60%, 60%, .4)";
+
+                time = new Date().getTime() / 10;
+                var points = [];
+
+                for (var c = 0; c < 180; c++) {
+                    var s = c/180;
+                    var han = Math.cos((s * Math.PI) / 2);
+                    var h = Math.sin((s * Math.PI) / 2);
+
+                    var p = [];
+                    s = 1 - s;
+                    var r = 0;
+
+                    for (var a = 0; a < MAX; a++) {
+                        var x = Math.cos(r) * han;
+                        var y = Math.sin(r) * han;
+                        var z = nami(r, s);
+
+                        p.push([x, y, HEI + z * s + h]);
+                        r += (Math.PI * 2) / 180;
+                    }
+                    points.push(p);
+                }
+
+                for (var c = 0; c < 100; c++) {
+                    var s = (c + 1) / 100;
+                    var p = [];
+                    var r = 0;
+
+                    for (var a = 0; a < MAX; a++) {
+                        var x = Math.cos(r) * s;
+                        var y = Math.sin(r) * s;
+                        var z = nami(r, s);
+
+                        p.push([x, y, HEI + z * s]);
+                        r += (Math.PI * 2) / MAX;
+                    }
+                    points.push(p);
+                }
+
+                for (var c = 0; c < points.length; c++) {
+                    var p = points[c];
+                    var p2 = [];
+
+                    for (var a = 0; a < p.length; a++) {
+                        var x = p[a][0];
+                        var y = p[a][1];
+                        var z = p[a][2];
+                        var b = Math.pow(1.5, y / 2);
+
+                        p2.push([
+                            x * b * 150 + 200,
+                            z * b * 200 - HEI * 200 + 150
+                        ]);
+                    }
+
+                    ctx.beginPath();
+                    for (var a = 0; a < p2.length; a++) {
+                        ctx.lineTo(p2[a][0], p2[a][1]);
+                    }
+
+                    ctx.closePath();
+                    ctx.stroke();
+                }
+
+                requestAnimationFrame(animate);
+            }
+
+            function nami(r, s) {
+                return Math.sin(r * 2 - time / 13 + s * 13) / 20 +
+                       Math.sin(r * 5 - time / 17 + s * 13) / 20 +
+                       Math.sin(r * 7 - time / 19 + s * 13) / 40;
+            }
+        </script>
+    </body>
+</html>
