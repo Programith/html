@@ -1,0 +1,40 @@
+/*
+
+@Programith
+
+*/
+
+body {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: black;
+}
+
+.logo {
+    width: 200px;
+    height: 200px;
+    align-self: end;
+}
+.logo .first {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: #ff4654;
+    clip-path: polygon(0 10%, 70% 90%, 35% 90%, 0 50%);
+}
+.logo .second {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: #ff4654;
+    clip-path: polygon(100% 10%, 100% 50%, 88% 65%, 55% 65%);
+}
+
+h1 {
+    align-self: start;
+    text-align: center;
+    font-family: Tungsten-Bold, arial, georgia, sans-serif;
+    color: white;
+}
