@@ -1,0 +1,67 @@
+/*
+
+@Programith
+
+*/
+
+body {
+    background: black;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pendulum {
+    display: flex;
+}
+
+.piece {
+    transform-origin: center top;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 5vw;
+    height: 20vw;
+}
+.piece::before {
+    content: "";
+    height: 15vw;
+}
+.piece::after {
+    content: "";
+    border-radius: 100%;
+    background: white;
+    width: 5vw;
+    height: 5vw;
+}
+.piece:first-child {
+    animation: 1s cubic-bezier(0.215, 0.61, 0.355, 1) infinite alternate left;
+}
+.piece:last-child {
+    animation: 1s cubic-bezier(0.55, 0.055, 0.675, 0.19) infinite alternate right;
+}
+
+@keyframes left {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes right {
+    0% {
+        transform: rotate(-45deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
