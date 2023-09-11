@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--
+
+    @Programith
+
+    //-->
+
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <canvas width="600" height="400"></canvas>
+
+        <script type="text/javascript">
+            var canvas = document.querySelector("canvas");
+            var ctx = canvas.getContext('2d');
+
+            function draw(color) {
+                ctx.fillStyle = color;
+                ctx.fillRect(200,50,350,300);
+                
+                ctx.fillStyle = 'black';
+                ctx.fillRect(250, 110, 90, 90);
+                ctx.fillRect(410, 110, 90, 90);
+
+                ctx.fillRect(340, 200, 70, 100);
+
+                ctx.fillRect(300, 240, 40, 110);
+                ctx.fillRect(410, 240, 40, 110);  
+            }
+
+            setInterval(function() {
+                draw("#" + Math.floor(Math.random()*16777215).toString(16));
+            }, 200);
+        </script>
+    </body>
+</html>
