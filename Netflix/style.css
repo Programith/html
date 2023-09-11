@@ -1,0 +1,44 @@
+/*
+
+@Programith
+
+*/
+
+body {
+    margin: 0;
+    padding-top: 100px;
+    background: black;
+}
+
+.netflix {
+    width: 140px;
+    height: 250px;
+    position: relative;
+    margin-left: 50%;
+    transform: translate(-50%);
+    background: linear-gradient(90deg, #b1060e 0, #b1060e 50px, transparent 50px, transparent 90px, #b1060e 90px, #b1060e 140px);
+}
+
+.netflix::before,
+.netflix::after {
+    content: "";
+    display: block;
+    position: absolute;
+}
+.netflix::before {
+    width: 50px;
+    height: 250px;
+    top: 0;
+    left: 45px;
+    background: #e50914;
+    transform: skewX(19.6deg);
+    box-shadow: 0 0 30px #000;
+}
+.netflix::after {
+    width: 190px;
+    height: 25px;
+    top: 245px;
+    left: -25px;
+    border-radius: 50%;
+    background: #000;
+}
