@@ -1,0 +1,38 @@
+/*
+
+@Programith
+
+*/
+
+body {
+    background: black;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.microsoft-logo-outer {
+    margin: 30px auto;
+    width: 320px;
+}
+
+.microsoft-logo {
+    display: grid;
+    grid-template-columns: 150px 150px;
+    grid-template-rows: 150px 150px;
+    grid-gap: 1em;
+}
+
+.top-left {
+    background-color: #f35325;
+}
+.top-right {
+    background-color: #81bc06;
+}
+.bottom-left {
+    background-color: #05a6f0;
+}
+.bottom-right {
+    background-color: #ffba08;
+}
