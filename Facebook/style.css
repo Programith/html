@@ -1,0 +1,62 @@
+/*
+
+@Programith
+
+*/
+
+body {
+    background: black;
+}
+
+.icon {
+    width: 200px;
+    height: 200px;
+    background: #3b5998;
+    margin: 30px auto;
+    border-radius: 10px;
+    padding: 30px 0 0 0;
+    box-sizing: border-box;
+}
+
+.cross {
+    width: 31px;
+    height: 108px;
+    background: #fff;
+    position: relative;
+    left: 55%;
+    top: 62px;
+}
+
+.cross:before {
+    content: "";
+    width: 83px;
+    position: absolute;
+    left: -90%;
+    top: 0px;
+    border-right: 4px solid transparent;
+    border-top: 30px solid #fff;
+    border-radius: 2px;
+    z-index: 1;
+}
+
+.circle {
+    width: 60px;
+    height: 61px;
+    background: #fff;
+    z-index: 999;
+    position: absolute;
+    border-radius: 35px 2px 0px 0px;
+    top: -60px;
+    z-index: 0;
+}
+
+.circle:before {
+    width: 32px;
+    height: 34px;
+    content: "";
+    background: #3b5998;
+    position: absolute;
+    border-radius: 10px 1px 1px 1px;
+    left: 31px;
+    top: 30px;
+}
