@@ -1,0 +1,122 @@
+/*
+
+@Programith
+
+*/
+
+@import url(https://pro.fontawesome.com/releases/v5.11.2/css/all.css);
+
+body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 100vh;
+    font-family: "Roboto", sans-serif;
+    transition: 0.25s;
+    background: black;
+}
+
+body .options {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    overflow: hidden;
+    min-width: 600px;
+    max-width: 900px;
+    width: calc(100% - 100px);
+    height: 400px;
+}
+
+body .options .option {
+    position: relative;
+    overflow: hidden;
+    min-width: 60px;
+    margin: 10px;
+    background: var(--optionBackground, var(--defaultBackground, #e6e9ed));
+    background-size: auto 120%;
+    background-position: center;
+    cursor: pointer;
+    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+.option:nth-child(1) {
+    --defaultBackground: #ed5565;
+}
+.option:nth-child(2) {
+    --defaultBackground: #fc6e51;
+}
+.option:nth-child(3) {
+    --defaultBackground: #ffce54;
+}
+.option:nth-child(4) {
+    --defaultBackground: #2ecc71;
+}
+.option:nth-child(5) {
+    --defaultBackground: #5d9cec;
+}
+.option:nth-child(6) {
+    --defaultBackground: #ac92ec;
+}
+
+.option.active {
+    flex-grow: 10000;
+    transform: scale(1);
+    max-width: 600px;
+    margin: 0px;
+    border-radius: 40px;
+    background-size: auto 100%;
+}
+
+.option.active .label {
+    bottom: 20px;
+    left: 20px;
+}
+.option.active .label .info > div {
+    left: 0px;
+    opacity: 1;
+}
+.option:not(.active) {
+    flex-grow: 1;
+    border-radius: 30px;
+}
+
+.option:not(.active) .label {
+    bottom: 10px;
+    left: 10px;
+}
+.option:not(.active) .label .info > div {
+    left: 20px;
+    opacity: 0;
+}
+
+.label {
+    display: flex;
+    position: absolute;
+    right: 0px;
+    height: 40px;
+    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+.icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-width: 40px;
+    max-width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: white;
+    color: var(--defaultBackground);
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+    color: white;
+    font-weight: bold;
+}
