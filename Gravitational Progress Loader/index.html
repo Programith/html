@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--
+
+    @Programith
+
+    //-->
+
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="style.css" />
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    </head>
+    <body>
+        <div class="loader">
+            <div class="bar">
+                <div class="text">Loaded!</div>
+                <div class="loaded"></div>
+            </div>
+        </div>
+        <script>
+            for (var i = 0; i < 100; i++) {
+                var radius = rnd(160, 340);
+                var modifier = radius / 160;
+                $(".loader").append('<div class="spinner" style="animation: bar ' + 3.5 * modifier + "s linear infinite; height: " + radius + "px; animation-delay: -" + rnd(40, 80) / 10 + 's"></div>');
+            }
+
+            var runloader = setInterval(loader, 30);
+
+            function loader() {
+                if (rnd(0, 1)) {
+                    const unloaded = $(".spinner").filter(function () {
+                        return $(this).height() || 0 > 0;
+                    });
+                    const loaded = 100 - unloaded.length;
+
+                    $(".loaded").css("width", loaded + "%");
+
+                    if (loaded == 100) {
+                        clearInterval(runloader);
+                        $(".text").css("display", "block");
+                        return;
+                    }
+
+                    const index = rnd(0, unloaded.length - 1);
+                    unloaded[index].style.height = 0;
+                    unloaded[index].style.opacity = 0;
+                }
+            }
+
+            function rnd(m, n) {
+                return Math.floor(Math.random() * (n - m + 1)) + m;
+            }
+        </script>
+    </body>
+</html>
