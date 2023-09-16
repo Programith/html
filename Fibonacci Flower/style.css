@@ -1,0 +1,19 @@
+/*
+
+@Programith
+
+*/
+
+body {
+    overflow: hidden;
+}
+
+#fibo {
+    background-color: black;
+    position: absolute;
+    border: 2px solid blue;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

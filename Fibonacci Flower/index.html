@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--
+
+    @Programith
+
+    //-->
+
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <canvas id="fibo"></canvas>
+
+        <script type="text/javascript">
+            const canvas = document.getElementById("fibo");
+            const ctx = canvas.getContext("2d");
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            ctx.globalCompositeOperation = "lighter";
+            hue = Math.random() * 350;
+            let tens = Math.random() * 10;
+            let ones = Math.random() * 1;
+
+            let number = 0;
+            let scale = 40;
+
+            function drawFlower() {
+                let angle = number * tens + ones;
+
+                let radius = scale * Math.sqrt(number);
+                let positionX = radius * Math.sin(angle) + canvas.width / 2;
+                let positionY = radius * Math.cos(angle) + canvas.height / 2;
+
+                ctx.fillStyle = "hsl(" + hue + ", 100%, 50%)";
+                ctx.strokeStyle = "pink";
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+
+                ctx.rect(positionX, positionY, 20, 20);
+                ctx.closePath();
+                ctx.fill();
+                ctx.stroke();
+
+                number += 0.1;
+                hue++;
+            }
+
+            function animate() {
+                drawFlower();
+
+                if (number > 50) {
+                    return;
+                }
+                requestAnimationFrame(animate);
+            }
+
+            animate();
+        </script>
+    </body>
+</html>
