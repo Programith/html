@@ -1,0 +1,70 @@
+/*
+
+@Programith
+
+*/
+
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+.switch {
+    display: block;
+    margin-top: 24px;
+}
+.switch .slider {
+    position: relative;
+    display: inline-block;
+    height: 8px;
+    width: 32px;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #c5c5c5;
+    transition: all 0.2s ease;
+}
+.switch .slider:after {
+    background: #eeeeee;
+    position: absolute;
+    left: -8px;
+    top: -8px;
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+    content: "";
+    transition: all 0.2s ease;
+}
+.switch label {
+    margin-right: 7px;
+}
+.switch .input {
+    display: none;
+}
+.switch .input ~ .label {
+    margin-left: 8px;
+}
+.switch .input:checked ~ .slider:after {
+    left: 16px;
+}
+.switch .input:checked ~ .slider {
+    background: #fc5d9b;
+}
+.switch .input:checked ~ .slider:after {
+    background: #ef0460;
+}
+
+.center {
+    font-family: "Source Sans Pro", sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+h1 {
+    font-weight: normal;
+    margin-top: 0px;
+}
