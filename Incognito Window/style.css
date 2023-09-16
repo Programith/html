@@ -1,0 +1,195 @@
+/*
+
+@Programith
+
+*/
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400");
+html {
+    height: 100%;
+}
+
+body {
+    font: 14px/22px "Roboto", Arial, sans-serif;
+    background: black;
+    height: 100%;
+}
+
+li {
+    list-style-type: none;
+}
+
+.browser {
+    margin: 50px auto;
+    background: white;
+    width: 80%;
+    height: 80%;
+    min-height: 450px;
+    border-radius: 7px;
+    padding: 10px;
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+}
+
+.browser-buttons {
+    height: 20px;
+}
+
+.browser-buttons .red {
+    background-color: #fc635e;
+    border: 1px solid #dc4441;
+}
+
+.browser-buttons .yellow {
+    background-color: #fdbc40;
+    border: 1px solid #db9c31;
+}
+
+.browser-buttons .green {
+    background-color: #35cd4b;
+    border: 1px solid #24a732;
+}
+
+.browser-buttons i {
+    width: 9px;
+    height: 9px;
+    display: block;
+    margin-right: 7px;
+    border-radius: 100%;
+    float: left;
+}
+
+.browser-top-container {
+    position: relative;
+    display: flex;
+}
+
+.fa-lock {
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    color: #52b565;
+}
+
+.browser-address,
+.google-search {
+    background-color: #f3f3f3;
+    padding: 5px 10px 5px 22px;
+    width: 97%;
+    border: 1px solid #eeeeee;
+    outline: none;
+    transition: background-color 0.3s ease-out;
+}
+
+.browser-address-animation {
+    background-color: #626262;
+    color: white;
+    border: 1px solid #383838;
+}
+
+.menu-button {
+    margin: 3px 10px 0 14px;
+    color: gray;
+    padding: 3px 10px;
+    font-size: 18px;
+}
+.menu-button:hover {
+    background: #f3f3f3;
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 10px;
+}
+
+.menu {
+    position: absolute;
+    right: 20px;
+    background: #dfdfdf;
+    width: 130px;
+    padding: 10px 0;
+    border-radius: 7px;
+    margin-left: -10px;
+    display: none;
+}
+.menu li {
+    padding: 8px 0;
+}
+.menu li:hover {
+    background: #cdcdcd;
+}
+.menu a {
+    text-decoration: none;
+    color: #757575;
+    cursor: default;
+    margin: 12px;
+}
+
+.browser-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+}
+
+.google-logo {
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+
+.google-search {
+    width: 40%;
+    margin-top: 16px;
+}
+
+.incognito-logo {
+    display: none;
+    width: 120px;
+    display: none;
+}
+
+.incognito-header {
+    font-size: 200%;
+    color: #d6d6d6;
+    margin-bottom: 30px;
+    display: none;
+    font-weight: 300;
+}
+
+.incognito-info {
+    font-size: 14px;
+    width: 380px;
+    max-width: 100%;
+    color: #d6d6d6;
+    display: none;
+}
+
+.hvr-radial-out {
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    overflow: hidden;
+    transition-property: color;
+    transition-duration: 0.3s;
+}
+
+.hvr-radial-out:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #323232;
+    border-radius: 100%;
+    transform: scale(0);
+    transition-property: transform;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-out;
+}
+
+.hvr-radial-out-animation:before {
+    transform: scale(2);
+}
