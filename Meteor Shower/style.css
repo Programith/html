@@ -1,0 +1,32 @@
+/*
+
+@Programith
+
+*/
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(15deg, #e66465, #9198e5);
+    transform: rotate(15deg);
+    height: 100vh;
+    overflow: hidden;
+}
+
+i {
+    position: absolute;
+    height: 160px;
+    background: linear-gradient(transparent, #fff);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    animation: raining 5s linear Infinite;
+}
+
+@keyframes raining {
+    0% {
+        transform: translateY(-160px);
+    }
+    100% {
+        transform: translateY(calc(100vh + 160px));
+    }
+}
