@@ -1,0 +1,25 @@
+/*
+
+@Programith
+
+*/
+
+#field {
+    position: relative;
+    perspective: 250px;
+}
+
+body {
+    background-color: black;
+    overflow: hidden;
+}
+
+.ball,
+#center {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 0.5em;
+    border: 1px solid black;
+    background-color: #ffff99;
+}
