@@ -1,0 +1,107 @@
+/*
+
+@Programith
+
+*/
+
+:root {
+  --zuckerberg: url("https://raw.githubusercontent.com/Programith/Images/main/zuckerberg.png");
+  --elon: url("https://raw.githubusercontent.com/Programith/Images/main/elon.png");
+  --width: 200px;
+}
+
+body {
+    background: black;
+}
+
+.splash {
+    position: absolute;
+    width: var(--width);
+    height: 70px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+.run {
+    position: relative;
+    display: flex;
+    width: 100px;
+    animation: run 5s linear infinite;
+}
+
+@keyframes run {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(var(--width));
+    }
+    51% {
+        transform: translateX(var(--width)) scaleX(-1);
+    }
+    99% {
+        transform: translateX(0) scaleX(-1);
+    }
+}
+
+.pacman {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #ffcc00;
+    position: relative;
+    animation: pacman 0.3s infinite alternate;
+}
+
+@keyframes pacman {
+    from {
+        clip-path: polygon(50% 50%, 100% 20%, 100% 0%, 0% 0%, 0% 100%, 100% 100%, 100% 80%);
+    }
+    to {
+        clip-path: polygon(50% 50%, 100% 50%, 100% 0%, 0% 0%, 0% 100%, 100% 100%, 100% 50%);
+    }
+}
+
+.pacman::after {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    top: 10px;
+    right: 20px;
+    background: black;
+}
+
+.elon {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    background-image: var(--elon);
+    background-size: 100% 100%;
+}
+
+.zuckerberg {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-image: var(--zuckerberg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: zuckerberg 0.14s infinite alternate ease-in-out;
+}
+
+@keyframes zuckerberg {
+    from {
+        transform: rotate(-10deg);
+    }
+    to {
+        transform: rotate(10deg);
+    }
+}
