@@ -1,0 +1,15 @@
+/*
+
+@Programith
+
+*/
+
+body {
+    overflow: hidden;
+    background: black;
+}
+
+div {
+    position: absolute;
+    margin-top: -10%;
+}
